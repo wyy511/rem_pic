@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .pic-box{
+      width: 10rem;
+      background-color: red;
+      height: 3.9333rem;
+      background: url("http://p.qpic.cn/qqconadmin/0/6c206fe996484128ba2907233d2aacd5/0") no-repeat red;
+      background-size: cover;
+      position: relative;
+    }
+    .dots-box{
+      position: absolute;
+      left:50%;
+      bottom: 0.266667rem;
+      transform: translateX(-50%);
+      width:1.6rem;
+      height:0.186667rem;
+      font-size: 0;
+    }
+    .dots-box li{
+      display: inline-block;
+      background:white;
+      border-radius: 50%;
+      margin-right: 0.133333rem;
+      width: .1866667rem;
+      height: 100%;
+      opacity: 0.5;
+      transition: opacity .3s;
+    }
+    .dots-box li:last-child{
+      margin-right: 0;
+    }
+    .dots-box li.on{
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="pic-box">
+    <ul class="dots-box">
+      <li class="on"></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+  <script type="text/javascript">
+    var lis = document.querySelectorAll(".dots-box li");
+    // console.log(lis);
+    var onCurrentli = document.querySelector(".dots-box .on");
+    // console.log(onCurrentli);
+    var i = 0;
+    setInterval(function(){
+
+      // console.log(i);
+      // onCurrentli.classList.remove("on");
+      // lis[1].classList.add("on");
+      // document.querySelector(".dots-box li:last-child").classList.add("on");
+
+      // lis[lis.length-1].classList.add("on");
+      document.querySelector(".dots-box .on").classList.remove("on");
+      lis[i].classList.add("on");
+      i++;
+      if(i >= lis.length)
+      {
+        i = 0;
+      }
+    },2000);
+  </script>
+</body>
+</html>
